@@ -1,0 +1,57 @@
+<template name="loginOptions">
+		{{#if currentUser}}
+	<div class="dropdown">
+		<button class="btn btn-success dropdown-toggle btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			<span class="glyphicon glyphicon-user"></span>
+			{{currentUser.username}}
+			<span class="caret"></span>
+		</button>
+
+		<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+			<li><a href="#">Action</a></li>
+			<li><a href="#">Another action</a></li>
+			<li><a href="#">Something else here</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a id="logout"><span class=" glyphicon glyphicon-log-out text-danger"></span> Logout</a></li>
+		</ul>
+	</div>
+	{{else}}
+			<button class="btn btn-danger btn-xs" type="button" id="btnLogin"><span class="glyphicon glyphicon-log-in"></span> Sign in</button>
+	{{/if}}
+
+	{{> login}}
+</template>
+
+<template name="login">
+	<div class="modal fade text-left" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="padding:35px 50px;">
+					<!--a type="button" href="/logout" class="close" data dismiss="modal">&times;</a-->
+					<a type="button" href="#" class="close" id="btnCancel">&times;</a>
+					<h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+				</div>
+				<div class="modal-body" style="padding:40px 50px;">
+					<form method="post" action="/login" role="form">
+						<div class="form-group">
+							<label for="username"><span class="glyphicon glyphicon-user"></span>User</label>
+							<input type="text" class="form-control" id="username" name="username" placeholder="Enter user Id">
+						</div>
+						<div class="form-group">
+							<label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+							<input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+						</div>
+						<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a type="button" href="" class="btn btn-danger btn-default pull-left" id="btnCancel"><span class="glyphicon glyphicon-remove"></span> Cancel</a>
+					<p>Not a member? <a href="#">Sign Up</a></p>
+					<!--          <p>Forgot <a href="#">Password?</a></p>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+

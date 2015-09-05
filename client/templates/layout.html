@@ -1,0 +1,26 @@
+<template name="main">
+	<div class="container">
+		<body>
+			<div class="container">
+				<div class="well well-sm text-right">
+						{{> loginOptions}}
+				</div>
+					{{> navigation}}
+			</div>
+
+			<div class="container">
+				{{> yield}}
+			</div>
+
+			<div class="container">
+				<footer class='well'>
+					<a href='http://es.wikipedia.org/wiki/Quiz'
+						 class='text-pull-center'>¿Qué es un Quiz? </a>
+					<a href='https://github.com/ameba6/quiz-acz'
+						 target="_blank">Mi proyecto en GitHub (Node + Express)</a>
+				</footer>
+			</div>
+
+		</body>
+	</div>
+</template>
