@@ -1,0 +1,60 @@
+<template name="loginOptions">
+		{{#if currentUser}}
+	<ul class="nav navbar-nav navbar-right">
+		<li class="dropdown">
+			<a href="" class="dropdown-toggle" data-toggle="dropdown">
+				<i class="fa fa-user"></i>
+				{{#if currentUser.profile.name}}
+				{{ currentUser.profile.name }}
+				{{else}}
+				{{currentUser.emails.[0].address}}
+				{{/if}}
+				<i class="fa fa-caret-down"></i></a>
+
+		<ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+<!--
+			<li><a href="#">Action</a></li>
+			<li><a href="#">Another action</a></li>
+-->
+			<li><a href="{{ pathFor 'userProfile' }}">Profile</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a id="logout"><i class="fa fa-sign-out text-danger"></i> Logout</a></li>
+		</ul>
+		</li>
+	</ul>
+	{{else}}
+	<div class="navbar-right">
+		<a href="#" class="btn btn-default navbar-btn" id="btnLogin">Sign in</a>
+		<a href="{{ pathFor 'atSignUp' }}" class="btn btn-primary navbar-btn">Register</a>
+	</div>
+	{{/if}}
+
+	{{> login}}
+</template>
+
+
+<template name="login">
+	<div class="modal fade text-left" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="padding:35px 50px;">
+					<!--a type="button" href="/logout" class="close" data dismiss="modal">&times;</a-->
+					<a type="button" href="#" class="close" id="btnCancel">&times;</a>
+					<h4><i class="fa fa-lock"></i> Login</h4>
+				</div>
+				<div class="modal-body" style="padding:40px 50px;">
+					{{> atForm state='signIn'}}
+				</div>
+				<div class="modal-footer">
+					<a type="button" href="" class="btn btn-danger btn-default pull-left" id="btnCancel"><i class="fa fa-times"></i> Cancel</a>
+					<p>Not a member?
+					<a type="button" href="{{ pathFor 'atSignUp' }}" class="btn btn-primary" id="btnRegister">Register</a></p>
+
+					<!--          <p>Forgot <a href="#">Password?</a></p>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+

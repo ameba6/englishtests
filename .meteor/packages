@@ -6,7 +6,11 @@
 
 meteor-platform
 less
-iron:router
-nemo64:bootstrap
 accounts-password
-accounts-ui
+useraccounts:bootstrap
+useraccounts:iron-routing
+iron:router
+zimme:iron-router-active
+yasinuslu:blaze-meta
+
+
