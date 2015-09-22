@@ -2,7 +2,9 @@
 	<h1>Edit your profile</h1>
 	<form id="newProfile">
 		<ul>
-		<li> Name: <input type="text" name="name" placeholder="{{currentUser.profile.name}}">*</li>
+			<li> Name: <input type="text" name="name" value="{{currentUser.profile.name}}">*</li>
+			<li> Role: <input type="text" name="role" placeholder="{{currentUser.roles}}"></li>
+			<li><input type="submit"></li>
 	</ul>
 	</form>
 </template>
