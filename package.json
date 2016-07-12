@@ -12,6 +12,7 @@
     "react-dom": "^15.1.0",
     "react-komposer": "^1.11.0",
     "react-mounter": "^1.2.0",
+    "react-slick": "^0.12.2",
     "simple-react-modal": "^0.4.9"
   }
 }
