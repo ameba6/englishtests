@@ -8,7 +8,7 @@ import Logo from './Logo.jsx';
 export default class Header extends Component {
 	render() {
 		return (
-				<header>
+				<header className="header-area">
 					<div className="Info-area">
 						<Contact />
 						<Social />
