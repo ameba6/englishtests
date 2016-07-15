@@ -6,7 +6,7 @@ export default class Logo extends Component {
 			<div>
 				<a href="/">
 					<img alt="Level Up Tutorials Logo"
-					src="/logo.svg"
+					src=""
 					width="150"/>
 				</a>
 			</div>
