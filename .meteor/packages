@@ -19,6 +19,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 kadira:flow-router		#Router library
 stolinski:stylus-multi	#LevelUp library for CSS-Stylus
+aldeed:collection2
+ultimatejs:tracker-react
 
 meteortoys:allthings
 

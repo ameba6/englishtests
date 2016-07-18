@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SimpleSlider from '../partials/SimpleSlider.jsx';
 
 export default class MyHome extends Component {
+
 	render() {
 		return(
 			<div>
@@ -11,4 +12,4 @@ export default class MyHome extends Component {
 			</div>
 		)
 	}
-}
+};
