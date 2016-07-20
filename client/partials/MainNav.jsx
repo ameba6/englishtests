@@ -13,7 +13,7 @@ export default class MainNav extends Component {
             <ul>
             	<li className="mainNav-Item"><a href="#">BV</a></li>
                 <li className="mainNav-Item"><a href="/">Home</a></li>
-                <li className="mainNav-Item"><a href="#">Admin</a></li>
+                <li className="mainNav-Item"><a href="admin">Admin</a></li>
             </ul>
   		</nav>
 		)

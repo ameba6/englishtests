@@ -31,6 +31,7 @@ card(depth)
 // Common Transition
 trans(sec = 0.3s)
 	transition: all sec ease
+	
 // Grid
 $xsmall = 340px
 $small = 500px
@@ -38,9 +39,13 @@ $med = 700px
 $large = 960px
 $xlarge = 1150px
 $wide = 1200px
-
+$side-nav = 100px
+$side-nav-min = 60px
+$side-nav-large = 200px
+ 
 // Colors
-$black = #222222
+$black = #000000
+$light-black = #23282D
 $white = #FFFFFF
 $grey = #555
 $grey-text = #BCBCBC
@@ -66,22 +71,20 @@ $action = red
 $accent = blue
 $navi = deep-blue
 
-z = {
-	$neg: -7,
-	$lowest: 1,
-	$low: 4,
-	$mid: 5,
-	$video: 6,
-	$header: 7,
-	$nav: 8,
-	$mini: 9,
-	$modal: 10,
-	$highest: 11
-}
+//Social Colors
+$twitter = #00aced
+$facebook = #3b5998
+$google = #dd4b39
+$youtube = #bb0000
 
-social = {
-	$twitter: #00aced,
-	$facebook: #3b5998,
-	$google: #dd4b39,
-	$youtube: #bb0000
-}
+// Z-Index level
+$zNeg = -7
+$zLowest = 1
+$zLow = 4
+$zMid = 5
+$zVideo = 6
+$zHeader = 7
+$zNav = 8
+$zMini = 9
+$zModal = 10
+$zHighest = 11

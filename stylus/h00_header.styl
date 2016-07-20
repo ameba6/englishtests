@@ -1,0 +1,34 @@
+.header-area
+	background $white
+	background-image url('/uk-flag.jpg')
+	background-position center 77%
+	
+// h1x -	Header Section
+	& .Info-area
+		overflow hidden
+		padding 5px
+		height 1.4em
+		background  -moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(0,0,0,0.8))
+		border-bottom 1px solid rgba(0,0,0,0.8)
+		color $grey-text
+		text-transform lowercase
+
+	// h2x -	Header Section
+	& .Nav-area 
+		border-bottom 1px solid $light-grey
+		color $deep-grey
+		position relative
+		z-index $nav
+		height 150px
+		padding 0px 2%
+		display flex
+		justify-content space-between
+		a
+			color $deep-grey
+		.BackImg
+			position relative
+			z-index $video
+			top 0
+			left 0
+			width 100%
+			height 100%

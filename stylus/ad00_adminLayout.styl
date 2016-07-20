@@ -1,0 +1,65 @@
+
+.admin-layout
+	color $deep-grey
+	max-width $full
+	
+.admin-header
+	fixed top left
+	height 1.4em
+	width 100%
+	overflow hidden
+	padding 5px
+	z-index $zHeader
+	background-color $blue
+	border-bottom 1px solid $deep-grey
+	color $grey-text
+	text-transform lowercase
+		
+.admin-nav
+	fixed top left
+	height 100%
+	width $side-nav-min
+	z-index: $zMid
+	overflow hidden
+	background $light-black
+	color #FFF
+	ul
+		margin 0
+		padding 0
+		display block
+		justify-content space-between
+		list-style none
+	a
+		color $white
+		text-decoration none
+		padding 5px 10px
+		display flex
+		text-align bottom
+		&:hover, &.active
+			background $black
+			color $bright-blue
+	i
+		display block
+		margin 5px 0px
+		width 40px
+
+	.AdNav-text
+		display none
+		padding 0 0 0 3px
+	+above($med)
+		fixed top left
+		height 100%
+		width $side-nav
+		padding 120px 0
+		a
+			padding 5px 10px
+			&:hover, &.active
+				border-left 0px solid $bright-blue
+		.AdNav-text
+			display inline
+	+above($large)
+		width $side-nav-large
+		a
+			padding 5px 10px
+			&:hover, &.active
+				border-left 0px solid $bright-blue
