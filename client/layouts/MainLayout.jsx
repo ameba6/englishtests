@@ -2,10 +2,10 @@ import React from 'react';
 
 import Header from '../partials/Header.jsx';
 
-export const MainLayout = ({content}) => (
+export const MainLayout = ({academy, content}) => (
 	<div className="main-layout">
 	<header className="main-header">
-		<Header />
+		<Header academy={academy} />
 	</header>
 	<main>
 		{content}

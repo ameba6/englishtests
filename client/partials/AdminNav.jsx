@@ -7,20 +7,18 @@ export default class AdminNav extends Component {
 											{name: "Item-3",faIcon: "fa-filter"	, txt: "Item-3"}
 											];
 		return(
-			<div className="admin-nav">
-				<ul className="">
-				{adminItems.map( (item)=>{
-					return(
-						<li key={item.name} onClick="">
-							<a>
-								<i className={"fa " + item.faIcon + " fa-lg"}></i>
-								<span className="AdNav-text">{item.txt}</span>
-							</a>
-						</li>
-					)
-				})}
-				</ul>
-			</div>
+			<ul className="">
+			{adminItems.map( (item)=>{
+				return(
+					<li key={item.name} onClick="">
+						<a className="">
+							<i className={"fa " + item.faIcon + " fa-lg"}></i>
+							<span className="AdNav-text">{item.txt}</span>
+						</a>
+					</li>
+				)
+			})}
+			</ul>
 		)
 	}
 }

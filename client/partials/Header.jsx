@@ -22,7 +22,7 @@ export default class Header extends TrackerReact (Component) {
 	}
 
 	academy() {
-		return Academies.findOne({name: "Tress"});
+		return Academies.findOne({name: this.props.academy});
 	}
 
 	render() {
@@ -37,7 +37,7 @@ export default class Header extends TrackerReact (Component) {
 							<Social socialLinks={oneAcademy.socialLinks}/>
 						</div>
 						<div className="Nav-area" >
-							<Logo />
+							<Logo logo={oneAcademy.logo}/>
 							<h1>{oneAcademy.name}</h1>
 							<MainNav />
 						</div>
