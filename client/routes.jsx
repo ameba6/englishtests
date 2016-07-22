@@ -9,7 +9,7 @@ import MyHome from './pages/MyHome.jsx'
 FlowRouter.route('/admin', {
 	action() {
 		mount(AdminLayout, {
-			content: (<AdminHello />)
+			content: (<AdminPage />)
 		})
 	}
 });

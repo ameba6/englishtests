@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 
 export default class AdminNav extends Component {
-	constructor() {
-		super()
+
+	constructor () {
+		super();
 		this.state = {
 			selected: 0
 		}
+	}
+	componentDidMount() {
+		this.setState({selected: this.props.selected});	      
 	}
 
 	handleClick(index, event) {
 		event.preventDefault();
 		this.setState({selected: index});
+		this.props.clickOn(index);
 	}
 
 	render() {
