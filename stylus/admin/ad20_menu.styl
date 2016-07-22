@@ -1,0 +1,33 @@
+.admin-menu
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items flex-start
+	& .my-ul
+		padding 0
+		width 100%
+		list-style none
+	& li
+		margin 0
+		padding 0
+		&:hover
+			background $black
+			color $bright-blue
+	& .active
+		background-color $active-blue
+		color $light-grey
+		&:hover
+			background-color $active-blue
+			color $light-grey
+	& a
+		text-decoration none
+		padding 10px 10px
+		color $grey-text
+		display flex
+
+	& i
+		display block
+		width 40px
+	& .AdNav-text
+		display inline
+		padding 0 0 0 0px

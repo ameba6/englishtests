@@ -3,13 +3,22 @@ import {mount} from 'react-mounter';
 
 import {MainLayout} from './layouts/MainLayout.jsx';
 import {AdminLayout} from './layouts/AdminLayout.jsx';
-import AdminHello from './pages/admin/AdminHello.jsx'
+import AdminPage from './pages/admin/AdminPage.jsx'
 import MyHome from './pages/MyHome.jsx'
 
 FlowRouter.route('/admin', {
 	action() {
 		mount(AdminLayout, {
 			content: (<AdminHello />)
+		})
+	}
+});
+
+
+FlowRouter.route('/admin/:pageId', {
+	action(params, queryParams) {
+		mount(AdminLayout, {
+			content: (<AdminPage page={params.pageId} />)
 		})
 	}
 });
