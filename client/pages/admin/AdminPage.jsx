@@ -1,32 +1,100 @@
 import React, {Component} from 'react';
 
-import AdminMenu from '../../partials/admin/AdminMenu.jsx';
+import Hello from '../../../Hello.jsx';
+
 
 export default class AdminPage extends Component {
-	constructor(){
-		super();
-		this.state = {
-			selectedTab: 0
-		}
-	}
-
-	contentSelect(tabIndex){
-		return(this.setState({selectedTab: tabIndex}))
-	}
 
 	render() {
-		console.log(this.props.page);
-		let Tindex = this.state.selectedTab;
 		return(
-			<main  className="admin-body">
-				<nav className="admin-nav"><AdminMenu selected={this.state.selectedTab} clickOn={this.contentSelect.bind(this)} /></nav>
-				<div className="admin-content">
-					<h1>{Tindex} AdminHello.... :)    AdminHello.... :)    AdminHello.... :)</h1>
-					<h1>AdminHello.... :)    AdminHello.... :)   AdminHello.... :)</h1>
-				</div>
-				<aside className="admin-ads"><a>aside</a></aside>
-			</main>
-
+				<Tabs>
+					<Pane label="Academies" faIcon="fa-leaf">
+            <div>This is my tab 1 contents!</div>
+          </Pane>
+          <Pane label="Tests" faIcon="fa-cube">
+            <Hello />
+          </Pane>
+          <Pane label="Users" faIcon="fa-filter">
+            <div>This is my tab 3 contents!</div>
+          </Pane>
+				</Tabs>
 		)
 	}
 }
+
+const Tabs = React.createClass({
+  displayName: 'Tabs',
+  propTypes: {
+    selected: React.PropTypes.number,
+    children: React.PropTypes.oneOfType([
+      React.PropTypes.array,
+      React.PropTypes.element
+    ]).isRequired
+  },
+  getDefaultProps() {
+    return {
+      selected: 0
+    };
+  },
+  getInitialState() {
+    return {
+      selected: this.props.selected
+    };
+  },
+  handleClick(index, event) {
+    event.preventDefault();
+    this.setState({
+      selected: index
+    });
+  },
+  _renderTitles() {
+    function labels(child, index) {
+      let activeClass = (this.state.selected === index ? 'active' : '');
+      return (
+        <li key={index} >
+          <a href="#" className={activeClass} onClick={this.handleClick.bind(this, index)} >
+          	<i className={"fa " + child.props.faIcon + " fa-lg"}></i>
+            {child.props.label}
+          </a>
+        </li>
+      );
+    }
+    return (
+    	<div className="admin-menu">
+      	<ul className="my-ul">
+        	{this.props.children.map(labels.bind(this))}
+      	</ul>
+      </div>
+    );
+  },
+  _renderContent() {
+    return (
+      <div>
+        {this.props.children[this.state.selected]}
+      </div>
+    );
+  },
+  render() {
+    return (
+      <div className="admin-body">
+      	<div className="admin-nav">{this._renderTitles()}</div>
+      	<div className="admin-content">{this._renderContent()}</div>
+      </div>
+    );
+  }
+});
+
+const Pane = React.createClass({
+  displayName: 'Pane',
+  propTypes: {
+    label: React.PropTypes.string.isRequired,
+    children: React.PropTypes.element.isRequired
+  },
+  render() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
+  }
+});

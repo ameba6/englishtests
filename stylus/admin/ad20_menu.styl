@@ -10,9 +10,7 @@
 	& li
 		margin 0
 		padding 0
-		&:hover
-			background $black
-			color $bright-blue
+
 	& .active
 		background-color $active-blue
 		color $light-grey
@@ -20,10 +18,15 @@
 			background-color $active-blue
 			color $light-grey
 	& a
+		outline 0
 		text-decoration none
 		padding 10px 10px
 		color $grey-text
 		display flex
+		&:hover
+			background $black
+			color $bright-blue
+		
 
 	& i
 		display block
