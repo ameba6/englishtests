@@ -5,6 +5,7 @@ import Social from './Social.jsx';
 import Contact from './Contact.jsx';
 import MainNav from './MainNav.jsx';
 import Logo from './Logo.jsx';
+import User from './User.jsx';
 
 export default class Header extends TrackerReact (Component) {
 	constructor() {
@@ -25,21 +26,29 @@ export default class Header extends TrackerReact (Component) {
 		return Academies.findOne({name: this.props.academy});
 	}
 
+/*<Logo logo={oneAcademy.logo}/>
+							<h1 className="tempH1">{oneAcademy.name}</h1>
+							<MainNav />*/
+
+
 	render() {
 		let oneAcademy = this.academy();
 		if (!oneAcademy){
 			return (<h1>My Resolutions </h1>);
 		} else {
 			return (
-					<header className="header-area">
-						<div className="Info-area">
+					<header className="header-body">
+						<div className="header-info">
 							<Contact />
 							<Social socialLinks={oneAcademy.socialLinks}/>
 						</div>
-						<div className="Nav-area" >
+						<div className="nav-area" >
 							<Logo logo={oneAcademy.logo}/>
 							<h1>{oneAcademy.name}</h1>
-							<MainNav />
+							<div className="mainNav-section">
+								<User />
+								<MainNav />
+							</div>
 						</div>
 					</header>
 			);

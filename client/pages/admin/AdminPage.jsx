@@ -17,6 +17,9 @@ export default class AdminPage extends Component {
           <Pane label="Users" faIcon="fa-filter">
             <div>This is my tab 3 contents!</div>
           </Pane>
+          <Pane label="Hello" faIcon="fa-user">
+            <div>This is my tab 4 contents!</div>
+          </Pane>
 				</Tabs>
 		)
 	}
@@ -91,6 +94,7 @@ const Pane = React.createClass({
     children: React.PropTypes.element.isRequired
   },
   render() {
+    console.log(this.props.children);
     return (
       <div>
         {this.props.children}
