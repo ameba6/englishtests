@@ -9,14 +9,9 @@ export default class Social extends Component {
 
 	render() {
 		console.log(this.props.socialLinks);
-		let socialLinks = this.props.socialLinks;
-		let sl = [{name:"facebook",faIcon: "fa-facebook", url: "https://www.facebook.com/CambridgeEnglish"},
-							{name:"googlePlus",faIcon: "fa-google-plus", url: "https://www.youtube.com/user/cambridgeenglishtv"},
-							{name:"twitter",faIcon: "fa-twitter", url: "https://twitter.com/CambridgeEng"}
-						];	
+		let socialLinks = this.props.socialLinks;	
 		return (
-			<div className="social-menu">
-				<ul className="social-ul">
+				<ul className="social-menu">
 				{socialLinks.map( (sl)=>{
 					return(
 						<li className="social-item" key={sl.name} onClick={this.clickSocial.bind(this, sl.url)}>
@@ -28,7 +23,6 @@ export default class Social extends Component {
 						</li>
 						)})}
         </ul>
-			</div>
 		)
 	}
 }
