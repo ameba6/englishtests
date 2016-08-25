@@ -7,6 +7,6 @@ Y se me ocurrio hacerlo en Meteor por probar e intentar tener una estadistica de
 
 Ahora vuelvo a retomar el proyecto pero estoy haciendo un refactoring para adaptarlo a React y Meteor.
 
-podeis verlo en http://www.cortesa.net/es/Proyectos/ y pinchais en la imagen de la pagina web.
+podeis verlo en http://english-tests.herokuapp.com/ y pinchais en la imagen de la pagina web.
 
 Gracias.

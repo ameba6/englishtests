@@ -1,0 +1,41 @@
+time = 0.3s
+
+.social-menu 
+	list-style none
+	padding 0
+	margin 0
+	flex 1 0 auto
+	display flex
+	flex-direction row
+	justify-content flex-end
+	align-items center
+	& li + li 
+		margin-left: 3px
+	& i
+		text-decoration: none
+		color $gray-text
+		trans(time)
+	:hover
+		& i
+			color $deep-gray
+		
+.social-item
+	cursor pointer
+	font-size 70%
+	&> .fa-stack
+		trans(time)
+		& .bkhover
+			color $bright-blue
+			opacity 0
+			transform scale(0,0)
+			trans(time)
+		& .bk
+			color transparent
+			trans(time)
+		&:hover
+			color $light-black
+			& .bkhover
+				transform scale(1,1)
+				opacity 1
+			& .bk
+				opacity 1

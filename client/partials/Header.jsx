@@ -1,48 +1,28 @@
 import React, {Component} from 'react';
-import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 import Social from './Social.jsx';
 import Contact from './Contact.jsx';
 import MainNav from './MainNav.jsx';
 import Logo from './Logo.jsx';
 
-export default class Header extends TrackerReact (Component) {
-	constructor() {
-		super();
-
-		this.state = {
-			subscription: {
-				academies: Meteor.subscribe("academies")
-			}
-		}
-	}
-
-	componentWillUnmount() {
-		this.state.subscription.academies.stop();  
-	}
-
-	academy() {
-		return Academies.findOne({name: "Tress"});
-	}
-
+export default class Header extends Component {
 	render() {
-		let oneAcademy = this.academy();
-		if (!oneAcademy){
-			return (<h1>My Resolutions </h1>);
-		} else {
-			return (
-					<header className="header-area">
-						<div className="Info-area">
-							<Contact />
-							<Social socialLinks={oneAcademy.socialLinks}/>
-						</div>
-						<div className="Nav-area" >
-							<Logo />
-							<h1>{oneAcademy.name}</h1>
-							<MainNav />
-						</div>
-					</header>
-			);
-		}
+		let sl = [{name:"facebook",faIcon: "fa-facebook", url: "https://www.facebook.com/CambridgeEnglish"},
+						{name:"googlePlus",faIcon: "fa-google-plus", url: "https://www.youtube.com/user/cambridgeenglishtv"},
+						{name:"twitter",faIcon: "fa-twitter", url: "https://twitter.com/CambridgeEng"}
+					];
+					
+		return (
+				<header className="header-area">
+					<div className="h_info-area">
+						<Contact />
+						<Social socialLinks={sl} />
+					</div>
+					<div className="h_nav-area" >
+						<Logo logo="Cambridge.png"/>
+        		<MainNav />
+        	</div>
+				</header>
+		)
 	}
-};
+}

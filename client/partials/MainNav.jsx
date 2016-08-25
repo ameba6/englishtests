@@ -9,13 +9,13 @@ export default class MainNav extends Component {
     //<li className=""><AccountsLogin /></li>
 	render() {
 		return (
-		  <nav className="main-nav" ref="container">
-            <ul>
-            	<li className="mainNav-Item"><a href="#">BV</a></li>
-                <li className="mainNav-Item"><a href="/">Home</a></li>
-                <li className="mainNav-Item"><a href="#">Admin</a></li>
-            </ul>
-  		</nav>
+			<div className="mainNav-menu">
+				<ul className="mainNav-ul">
+					<li className="mainNav-Item "><a href="admin" > Dashboard</a></li>
+					<li className="mainNav-Item "><a href="admin"> Backoffice</a></li>
+					<li className="mainNav-Item "><a href="admin"> <i className="fa fa-cog fa-lg" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
 		)
 	}
 }
