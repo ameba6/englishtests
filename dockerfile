@@ -30,7 +30,3 @@ RUN make configure
 RUN ./configure --prefix=/usr
 RUN make all
 RUN make install
-
-
-WORKDIR /root
-RUN curl https://install.meteor.com/ | sh
