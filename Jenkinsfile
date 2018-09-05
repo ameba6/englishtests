@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        git(url: 'https://github.com/cortesa/englishtests.git', branch: 'Jenkins')
+        sh 'git checkout Jenkins'
       }
     }
   }
