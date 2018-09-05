@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sleep(unit: 'SECONDS', time: 10)
+        echo 'Step 1'
       }
     }
   }
