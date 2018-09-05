@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'goforgold/build-container'
+    dockerfile {
+      filename 'dockerfile'
     }
 
   }
