@@ -1,12 +1,12 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'dockerfile'
+    docker {
+      image 'ubuntu'
     }
 
   }
   stages {
-    stage('error') {
+    stage('Message') {
       steps {
         echo 'Step 1'
       }
