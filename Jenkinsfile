@@ -1,14 +1,14 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'dockerfile'
+    docker {
+      image 'goforgold/build-container'
     }
 
   }
   stages {
     stage('error') {
       steps {
-        sh 'git checkout Jenkins'
+        sleep(unit: 'SECONDS', time: 10)
       }
     }
   }
